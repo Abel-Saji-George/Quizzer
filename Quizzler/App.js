@@ -3,6 +3,8 @@ import React from 'react';
 import Home from './screens/home';
 import Quiz from './screens/quiz';
 import Result from './screens/result';
+import { NavigationContainer } from '@react-navigation/native';
+import MyStack from './navigation';
 
 const App = () => {
   return (
@@ -10,8 +12,9 @@ const App = () => {
       <View style={styles.container}>
       {/* <Text>This is Quizzler</Text> */}
       {/* <Home/> */}
-      <Quiz/>
+      {/* <Quiz/> */}
       {/* <Result/> */}
+      <NavigationContainer><MyStack /></NavigationContainer>
     </View>
     </View>
   );
