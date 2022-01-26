@@ -8,15 +8,9 @@ import MyStack from './navigation';
 
 const App = () => {
   return (
-    <View style={{backgroundColor:'#ffffffff',flex:1}}>
-      <View style={styles.container}>
-      {/* <Text>This is Quizzler</Text> */}
-      {/* <Home/> */}
-      {/* <Quiz/> */}
-      {/* <Result/> */}
-      <NavigationContainer><MyStack /></NavigationContainer>
-    </View>
-    </View>
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
   );
 };
 

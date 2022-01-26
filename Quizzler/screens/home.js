@@ -2,21 +2,25 @@ import { StyleSheet,Image, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import Title from '../components/title';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
-    <View  >
+    <View  style={styles.container} >
       <Title/>
       <View style={styles.bannerContainer}>
       <Image
-      source={{ url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_n8JxaZxPeDvHnPpotB6amsu2LzgJlKnmw&usqp=CAU'}}
+      source={{ 
+        uri:'https://p7.hiclipart.com/preview/234/669/248/nepal-general-knowledge-quiz-test-blue-light-bulb-vector.jpg'
+      }}
       style={styles.banner}
       resizeMode='contain'
       />
 
       
       </View>
-      <TouchableOpacity>
-        <Text style={styles.text}>Start</Text>
+      <TouchableOpacity
+      onPress={()=>{navigation.navigate("Quiz")}} 
+      style={styles.button}>
+        <Text style={styles.buttonText}>Start</Text>
       </TouchableOpacity>
     </View>
   );
@@ -30,7 +34,6 @@ const styles = StyleSheet.create({
   // flex:1
   },
   text:{
-    color:'#000000'
   },
   banner:{
     height:300,
@@ -38,6 +41,27 @@ const styles = StyleSheet.create({
   },
   bannerContainer:{
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    flex:1
+
+  },
+  container:{
+    paddingTop:40,
+    paddingHorizontal:20,
+    height:'100%'
+  },
+  button:{
+    width:"100%",
+    backgroundColor:"#1A759f",
+    padding:16,
+    borderRadius:16,
+    alignItems:'center',
+    marginBottom:30,
+  },
+  buttonText:{
+    color:'#ffffffff',
+    fontSize:24,
+    fontWeight:'600'
+
   }
 });
